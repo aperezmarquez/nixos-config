@@ -80,12 +80,6 @@
     ];
   };
 
-  # GPU settings
-  boot.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
-  
-  hardware.graphics.enable = true;
-
   # Install firefox
   programs.firefox.enable = true;
 
@@ -107,6 +101,8 @@
     libinput
     libdrm
     libxkbcommon
+    libxcursor
+    libx11
     pixman
     git
     meson
