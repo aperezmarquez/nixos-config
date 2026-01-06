@@ -47,7 +47,7 @@
   # };
   programs.niri.enable = true;
 
-  services.displayManager.sddm = {
+  services.displayManager.gdm = {
     wayland.enable = true;
     enable = true;
   };
