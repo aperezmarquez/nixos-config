@@ -57,6 +57,20 @@
   environment.sessionVariables = {
     XKB_DEFAULT_LAYOUT = "es";
   };
+
+  hardware.graphics = {
+    enable = true;
+  };
+
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
   # Configure keymap in X11
   # services.xserver.xkb.layout = "es";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
