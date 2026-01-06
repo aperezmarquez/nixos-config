@@ -45,10 +45,12 @@
   #   enable = true;
   #   windowManager.qtile.enable = true;
   # };
-  services.displayManager.sddm.enable = true;
-  services.sysc-greet.enable = false;
-  programs.niri.package = pkgs.niri;
-  services.displayManager.sessionPackages = [ pkgs.niri ];
+  programs.niri.enable = true;
+
+  services.displayManager.sddm = {
+    wayland.enable = true;
+    enable = true;
+  };
 
   programs.sway.enable = true;
   
