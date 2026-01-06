@@ -41,14 +41,16 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland = true;
   # services.xserver = {
   #   enable = true;
   #   windowManager.qtile.enable = true;
   # };
+  services.displayManager.sddm.enable = true;
+  services.sysc-greet.enable = false;
+  programs.niri.package = pkgs.niri;
+  services.displayManager.sessionPackages = [ pkgs.niri ];
+
   programs.sway.enable = true;
-  programs.niri.enable = true;
   
   environment.sessionVariables = {
     XKB_DEFAULT_LAYOUT = "es";
